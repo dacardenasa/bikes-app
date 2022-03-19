@@ -2,11 +2,15 @@ import { Header } from '../Header';
 
 import styles from './layout.module.css';
 
-export const Layout = ({ children }) => {
+export interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export const Layout = (props: LayoutProps) => {
   return (
     <section className={styles.layout}>
       <Header />
-      {children}
+      {props.children}
     </section>
   );
 };

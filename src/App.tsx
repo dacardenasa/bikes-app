@@ -1,10 +1,14 @@
 import React from 'react';
-import './app.css'
+import './App.css';
+import { Layout } from './components/templates';
+import './Global.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <Layout>
+        <p>Hello World!</p>
+      </Layout>
     </div>
   );
 }

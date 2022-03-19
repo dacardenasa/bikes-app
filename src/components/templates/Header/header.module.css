@@ -1,9 +1,20 @@
 header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  padding: 1em 0;
 }
 .header__descriptionBox {
   display: flex;
   flex-direction: column;
+}
+.header svg {
+  margin-right: 2em;
+}
+.header__title {
+  font-size: 3em;
+  color: var(--light-blue);
+}
+.header__subtitle {
+  font-size: 2em;
+  color: var(--light-blue);
 }
