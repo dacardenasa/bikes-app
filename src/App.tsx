@@ -1,9 +1,10 @@
 import React from 'react';
+import './app.css'
 
 function App() {
   return (
     <div className="App">
-      <h1>Bikes App Amazing</h1>
+      <h1>Hello World</h1>
     </div>
   );
 }
