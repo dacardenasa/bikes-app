@@ -1,6 +1,6 @@
 import styles from './header.module.css';
 
-import { ReactComponent as PoliceStationIcon } from '../../../assets/SVGS/policeStation.icon.svg';
+import { ReactComponent as PoliceStationIcon } from '@/assets/SVGS/policeStation.icon.svg';
 
 export const Header = () => {
   return (
