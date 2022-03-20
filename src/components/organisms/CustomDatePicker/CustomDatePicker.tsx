@@ -23,7 +23,7 @@ const CustomDatePicker = ({ date, handleDate, title }: ICalendarData) => {
       <label htmlFor={title} />
       <input
         type="text"
-        placeholder="from"
+        placeholder={title}
         id={title}
         className={styles.customDatePicker__dateField}
         value={date}

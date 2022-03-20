@@ -52,7 +52,7 @@ export const SearchForm = () => {
       {/* Calendar */}
       <div className={styles.searchForm__pickerBox}>
         <CustomDatePicker
-          title="startDate"
+          title="from"
           date={startDate}
           handleDate={(startDate: string) => {
             setStartDate(startDate);
@@ -61,7 +61,7 @@ export const SearchForm = () => {
       </div>
       <div className={styles.searchForm__pickerBox}>
         <CustomDatePicker
-          title="endDate"
+          title="to"
           date={endDate}
           handleDate={(endDate: string) => {
             setEndDate(endDate);
