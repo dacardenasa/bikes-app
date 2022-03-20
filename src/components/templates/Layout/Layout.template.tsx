@@ -1,16 +1,13 @@
-import { Header } from '../Header';
+import { Header } from '@/components';
+import { ILayoutProps } from '@/interfaces/bikes.interface';
 
 import styles from './layout.module.css';
 
-export interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export const Layout = (props: LayoutProps) => {
+export const Layout = ({ children }: ILayoutProps) => {
   return (
     <section className={styles.layout}>
       <Header />
-      {props.children}
+      {children}
     </section>
   );
 };
