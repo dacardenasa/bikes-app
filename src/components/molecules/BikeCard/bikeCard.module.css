@@ -4,6 +4,11 @@
   padding: 2em 1em;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid var(--aqua-blue);
+  border-radius: 8px;
+  margin-bottom: 1em;
+  -webkit-box-shadow: 0px 0px 8px 0px var(--aqua-blue);
+  box-shadow: 0px 0px 8px 0px var(--aqua-blue);
 }
 .bikeCard__pictureBox {
   width: 20%;

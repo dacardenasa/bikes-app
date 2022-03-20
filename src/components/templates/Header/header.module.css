@@ -2,7 +2,9 @@ header {
   width: 100%;
   display: flex;
   padding: 1em 0;
-  justify-content: space-between;
+}
+header svg {
+  margin-right: 2em;
 }
 .header__descriptionBox {
   display: flex;
@@ -23,6 +25,7 @@ header {
   }
   header svg {
     align-self: center;
+    margin: 0;
   }
   .header__title,
   .header__subtitle {
