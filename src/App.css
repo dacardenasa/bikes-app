@@ -1,4 +1,6 @@
 .App {
   display: flex;
   justify-content: center;
+  max-width: 750px;
+  min-width: 750px;
 }
