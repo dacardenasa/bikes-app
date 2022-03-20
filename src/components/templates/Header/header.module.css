@@ -2,13 +2,11 @@ header {
   width: 100%;
   display: flex;
   padding: 1em 0;
+  justify-content: space-between;
 }
 .header__descriptionBox {
   display: flex;
   flex-direction: column;
-}
-.header svg {
-  margin-right: 2em;
 }
 .header__title {
   font-size: 3em;
@@ -17,4 +15,17 @@ header {
 .header__subtitle {
   font-size: 2em;
   color: var(--light-blue);
+}
+
+@media(max-width: 768px) {
+  header {
+    flex-direction: column;
+  }
+  header svg {
+    align-self: center;
+  }
+  .header__title,
+  .header__subtitle {
+    text-align: center;
+  }
 }
