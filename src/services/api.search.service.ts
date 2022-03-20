@@ -22,6 +22,6 @@ export const fetchAPI = async ({
       return response.data.bikes;
     }
   } catch (error) {
-    return error;
+    throw new Error();
   }
 };

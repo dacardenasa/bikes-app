@@ -6,21 +6,34 @@ import { MyContext } from '@/App';
 import styles from './searchForm.module.css';
 
 export const SearchForm = () => {
-  const { handleBikesData, handleFetchingData } = useContext(MyContext);
+  const {
+    handleBikesData,
+    handleFetchingData,
+    cleanErrorState,
+    handleErrorRequest,
+  } = useContext(MyContext);
   const [description, setDescription] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
   const handleSearchBikes = () => {
-    if (handleFetchingData) {
+    if (handleFetchingData && cleanErrorState) {
       handleFetchingData();
+      cleanErrorState();
     }
-    fetchAPI({ startDate, endDate, description }).then((response) => {
-      if (handleBikesData && handleFetchingData) {
-        handleFetchingData();
-        handleBikesData(response);
-      }
-    });
+    fetchAPI({ startDate, endDate, description })
+      .then((response) => {
+        if (handleBikesData && handleFetchingData) {
+          handleFetchingData();
+          handleBikesData(response);
+        }
+      })
+      .catch((e) => {
+        if (handleFetchingData && handleErrorRequest) {
+          handleFetchingData();
+          handleErrorRequest(e);
+        }
+      });
   };
 
   return (

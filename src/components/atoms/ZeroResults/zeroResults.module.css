@@ -1,6 +1,8 @@
 .zeroResults {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .zeroResults__noResultsLabel {
   font-size: 3em;

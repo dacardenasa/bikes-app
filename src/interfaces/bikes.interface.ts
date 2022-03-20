@@ -35,6 +35,9 @@ export interface IContextProps {
   handleBikesData?: (data: IRootBike[]) => void;
   isFetchingData?: boolean;
   handleFetchingData?: () => void;
+  errorRequest?: string | null;
+  cleanErrorState?: () => void;
+  handleErrorRequest?: (error: string) => void;
 }
 
 export interface IParams {
@@ -52,4 +55,8 @@ export interface ICalendarData {
   date: string;
   handleDate: (field: string) => void;
   title: string;
+}
+export interface IZeroResults {
+  title: string;
+  screenType: string;
 }
