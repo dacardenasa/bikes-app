@@ -1,0 +1,9 @@
+.zeroResults {
+  display: flex;
+  flex-direction: column;
+}
+.zeroResults__noResultsLabel {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1em;
+}
