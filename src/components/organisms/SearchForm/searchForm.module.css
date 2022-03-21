@@ -55,4 +55,7 @@
   .searchForm__descriptionField {
     width: 100%;
   }
+  .searchForm__descriptionBox svg {
+    right: 10px;
+  }
 }
