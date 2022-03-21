@@ -4,6 +4,8 @@ import { fetchAPI } from '@/services/api.search.service';
 import { LOCALSTORAGE_PROPERTIES, LOCATION_LIST } from '@/constants/config';
 import { MyContext } from '@/App';
 
+import { ReactComponent as CloseIcon } from '@/assets/SVGS/close.icon.svg';
+
 import styles from './searchForm.module.css';
 
 export const SearchForm = () => {
@@ -19,7 +21,13 @@ export const SearchForm = () => {
   const [endDate, setEndDate] = useState('');
 
   const handleSearchBikes = () => {
-    if (handleFetchingData && cleanErrorState && handleFetchingFilters) {
+    if (
+      handleFetchingData &&
+      cleanErrorState &&
+      handleFetchingFilters &&
+      handleBikesData
+    ) {
+      handleBikesData([]);
       handleFetchingData(true);
       cleanErrorState();
       handleFetchingFilters();
@@ -68,6 +76,17 @@ export const SearchForm = () => {
             ''
           }
         />
+        {localStorage.getItem(LOCALSTORAGE_PROPERTIES.description) ||
+        description.length ? (
+          <CloseIcon
+            width={25}
+            height={25}
+            onClick={() => {
+              localStorage.removeItem(LOCALSTORAGE_PROPERTIES.description);
+              setDescription('');
+            }}
+          />
+        ) : null}
       </div>
       {/* Calendar */}
       <div className={styles.searchForm__pickerBox}>
