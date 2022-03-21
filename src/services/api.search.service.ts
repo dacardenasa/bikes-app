@@ -11,7 +11,7 @@ export const fetchAPI = async ({
 }: IParams) => {
   const parsedParams = {
     page,
-    per_page: 25,
+    per_page: 10,
     ...(description && { query: description }),
     ...(location && { location }),
   };
