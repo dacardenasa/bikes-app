@@ -1,6 +1,7 @@
 import { useState, useContext } from 'react';
 import { DatePickerMemo as CustomDatePicker } from '../CustomDatePicker';
 import { fetchAPI } from '@/services/api.search.service';
+import { LOCALSTORAGE_PROPERTIES, LOCATION_LIST } from '@/constants/config';
 import { MyContext } from '@/App';
 
 import styles from './searchForm.module.css';
@@ -11,27 +12,36 @@ export const SearchForm = () => {
     handleFetchingData,
     cleanErrorState,
     handleErrorRequest,
+    handleFetchingFilters,
   } = useContext(MyContext);
   const [description, setDescription] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
   const handleSearchBikes = () => {
-    if (handleFetchingData && cleanErrorState) {
-      handleFetchingData();
+    if (handleFetchingData && cleanErrorState && handleFetchingFilters) {
+      handleFetchingData(true);
       cleanErrorState();
+      handleFetchingFilters();
     }
-    fetchAPI({ startDate, endDate, description })
+    fetchAPI({
+      startDate,
+      endDate,
+      description,
+      location: LOCATION_LIST.berlin,
+    })
       .then((response) => {
-        if (handleBikesData && handleFetchingData) {
-          handleFetchingData();
+        if (handleBikesData && handleFetchingData && handleFetchingFilters) {
+          handleFetchingData(false);
           handleBikesData(response);
+          handleFetchingFilters();
         }
       })
       .catch((e) => {
-        if (handleFetchingData && handleErrorRequest) {
-          handleFetchingData();
+        if (handleFetchingData && handleErrorRequest && handleFetchingFilters) {
+          handleFetchingData(false);
           handleErrorRequest(e);
+          handleFetchingFilters();
         }
       });
   };
@@ -43,10 +53,20 @@ export const SearchForm = () => {
         <input
           type="text"
           placeholder="Seacrh case descriptions"
-          onChange={(e) => setDescription(e.target.value)}
+          onChange={(e) => {
+            setDescription(e.target.value);
+            localStorage.setItem(
+              LOCALSTORAGE_PROPERTIES.description,
+              e.target.value
+            );
+          }}
           id="description"
           className={styles.searchForm__descriptionField}
-          value={description}
+          value={
+            description ||
+            localStorage.getItem(LOCALSTORAGE_PROPERTIES.description) ||
+            ''
+          }
         />
       </div>
       {/* Calendar */}
