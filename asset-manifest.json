@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/dacardenasa/bikes-app/static/css/main.b4efe8f9.css",
+    "main.js": "/dacardenasa/bikes-app/static/js/main.2908be91.js",
+    "static/js/787.30b5b7de.chunk.js": "/dacardenasa/bikes-app/static/js/787.30b5b7de.chunk.js",
+    "static/media/policeStation.icon.svg": "/dacardenasa/bikes-app/static/media/policeStation.icon.6341f329347c808942588d27613b2ed9.svg",
+    "static/media/bike.icon.svg": "/dacardenasa/bikes-app/static/media/bike.icon.7e6ef7c20ef64cbf22459ff7f85c4ad8.svg",
+    "static/media/close.icon.svg": "/dacardenasa/bikes-app/static/media/close.icon.65d84a9d33a59ff6dc800a90930bfb39.svg",
+    "static/media/networkError.icon.svg": "/dacardenasa/bikes-app/static/media/networkError.icon.75c4c56e7782d0cf97a89068e1f926e0.svg",
+    "static/media/bikeMatch.icon.svg": "/dacardenasa/bikes-app/static/media/bikeMatch.icon.8f7e23a902c3344119565ab7299631d9.svg",
+    "static/media/calendar.icon.svg": "/dacardenasa/bikes-app/static/media/calendar.icon.5412a8a28da515d84c64de0d23ca3a9d.svg",
+    "index.html": "/dacardenasa/bikes-app/index.html",
+    "main.b4efe8f9.css.map": "/dacardenasa/bikes-app/static/css/main.b4efe8f9.css.map",
+    "main.2908be91.js.map": "/dacardenasa/bikes-app/static/js/main.2908be91.js.map",
+    "787.30b5b7de.chunk.js.map": "/dacardenasa/bikes-app/static/js/787.30b5b7de.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4efe8f9.css",
+    "static/js/main.2908be91.js"
+  ]
+}
