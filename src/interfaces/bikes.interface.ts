@@ -41,6 +41,7 @@ export interface IContextProps {
 }
 
 export interface IParams {
+  page?: number | 1;
   startDate?: string;
   endDate?: string;
   description?: string;

@@ -3,14 +3,15 @@ import { API_URL } from '@/constants/config';
 import { IParams } from '@/interfaces/bikes.interface';
 
 export const fetchAPI = async ({
+  page,
   startDate,
   endDate,
   description,
   location,
 }: IParams) => {
   const parsedParams = {
-    page: 1,
-    per_page: 10,
+    page,
+    per_page: 25,
     ...(description && { query: description }),
     ...(location && { location }),
   };
