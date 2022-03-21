@@ -25,19 +25,19 @@ export interface IBike {
 export interface IRootBike {
   bikesCases: IBike[];
 }
-
-export interface IBikeCardProps {
-  bikeCase: IBike;
-}
-
 export interface IContextProps {
   bikesCases?: IRootBike[];
   handleBikesData?: (data: IRootBike[]) => void;
   isFetchingData?: boolean;
-  handleFetchingData?: () => void;
+  handleFetchingData?: (isLoading: boolean) => void;
   errorRequest?: string | null;
   cleanErrorState?: () => void;
   handleErrorRequest?: (error: string) => void;
+  isFetchingByFilters?: boolean;
+  handleFetchingFilters?: () => void;
+}
+export interface IBikeCardProps {
+  bikeCase: IBike;
 }
 
 export interface IParams {
@@ -60,4 +60,20 @@ export interface ICalendarData {
 export interface IZeroResults {
   title: string;
   screenType: string;
+}
+export interface IPaginationParams {
+  type: string;
+  currentPage: number | null;
+}
+export interface IPagination {
+  page?: number | null;
+  handleBikesData?: (data: IRootBike[]) => void;
+  handleFetchingData?: (isLoading: boolean) => void;
+  cleanErrorState?: () => void;
+  handleErrorRequest?: (error: string) => void;
+}
+export interface IButton {
+  handlePage: () => void;
+  buttonTitle: string;
+  isActiveButton: boolean;
 }
