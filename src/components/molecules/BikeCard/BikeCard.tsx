@@ -1,5 +1,4 @@
 import { ReactComponent as BikeDefaultIcon } from '@/assets/SVGS/bike.icon.svg';
-import { IBikeCardProps } from '@/interfaces/bikes.interface';
 
 import styles from './bikeCard.module.css';
 
