@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_URL } from '@/constants/config';
+import { API_URL } from '../constants/config';
 import { IParams } from '@/interfaces/bikes.interface';
 
 export const fetchAPI = async ({
