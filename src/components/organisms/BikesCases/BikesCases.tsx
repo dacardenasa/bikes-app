@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { MyContext } from '@/App';
-import { BikeCard, Spinner, ZeroResults } from '@/components';
-import { SCREEN_TYPE } from '@/constants/config';
+import { BikeCard, Spinner, ZeroResults, Paginator } from '@/components';
+import { SCREEN_TYPE, TOTAL_ITEMS } from '@/constants/config';
 
 import styles from './bikesCases.module.css';
 
@@ -10,12 +10,17 @@ export const BikesCases = () => {
   const hasContextBikesData = bikesCases && bikesCases.length > 0;
   return (
     <section className={styles.bikesCases}>
-      {hasContextBikesData && bikesCases.length > 0 && (
+      {hasContextBikesData && (
         <p className={styles.bikesCases__counterLabel}>
-          Total: {bikesCases.length}
+          <span className={styles.bikesCases__totalLabel}>Total:</span>{' '}
+          {TOTAL_ITEMS}
         </p>
       )}
-      {isFetchingData && <Spinner />}
+      {isFetchingData && (
+        <div className={styles.bikesCases__loaderBox}>
+          <Spinner />
+        </div>
+      )}
       {!isFetchingData &&
         !errorRequest &&
         bikesCases &&
@@ -28,13 +33,14 @@ export const BikesCases = () => {
           screenType={SCREEN_TYPE.networkError}
         />
       )}
-      <div className={styles.bikesCases__bikesCardBox}>
-        {!isFetchingData &&
-          hasContextBikesData &&
-          bikesCases.map((data: any) => (
+      {!isFetchingData && hasContextBikesData && (
+        <div className={styles.bikesCases__bikesCardBox}>
+          {bikesCases.map((data: any) => (
             <BikeCard key={data.id} bikeCase={data} />
           ))}
-      </div>
+        </div>
+      )}
+      {hasContextBikesData && <Paginator />}
     </section>
   );
 };
