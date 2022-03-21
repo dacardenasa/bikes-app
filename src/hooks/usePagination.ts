@@ -1,15 +1,7 @@
-import { useEffect, useState } from 'react';
-import { IRootBike } from '@/interfaces/bikes.interface';
+import { useEffect } from 'react';
+import { IPagination } from '@/interfaces/bikes.interface';
 import { fetchAPI } from '@/services/api.search.service';
 import { LOCALSTORAGE_PROPERTIES, LOCATION_LIST } from '@/constants/config';
-
-interface IPagination {
-  page?: number | null;
-  handleBikesData?: (data: IRootBike[]) => void;
-  handleFetchingData?: () => void;
-  cleanErrorState?: () => void;
-  handleErrorRequest?: (error: string) => void;
-}
 
 export const usePagination = ({
   page,
@@ -20,7 +12,7 @@ export const usePagination = ({
 }: IPagination) => {
   useEffect(() => {
     if (page) {
-      if (handleFetchingData) handleFetchingData();
+      if (handleFetchingData) handleFetchingData(true);
       const description = localStorage.getItem(
         LOCALSTORAGE_PROPERTIES.description
       );
@@ -32,13 +24,13 @@ export const usePagination = ({
         .then((response) => {
           if (cleanErrorState && handleFetchingData && handleBikesData) {
             cleanErrorState();
-            handleFetchingData();
+            handleFetchingData(false);
             handleBikesData(response);
           }
         })
         .catch((e) => {
           if (handleFetchingData && handleErrorRequest) {
-            handleFetchingData();
+            handleFetchingData(false);
             handleErrorRequest(e);
           }
         });
