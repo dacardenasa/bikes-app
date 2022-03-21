@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/bikes-app/static/css/main.b4efe8f9.css",
+    "main.css": "/bikes-app/static/css/main.79c8c138.css",
     "main.js": "/bikes-app/static/js/main.a9f13c12.js",
     "static/js/787.30b5b7de.chunk.js": "/bikes-app/static/js/787.30b5b7de.chunk.js",
     "static/media/policeStation.icon.svg": "/bikes-app/static/media/policeStation.icon.6341f329347c808942588d27613b2ed9.svg",
@@ -10,12 +10,12 @@
     "static/media/bikeMatch.icon.svg": "/bikes-app/static/media/bikeMatch.icon.8f7e23a902c3344119565ab7299631d9.svg",
     "static/media/calendar.icon.svg": "/bikes-app/static/media/calendar.icon.5412a8a28da515d84c64de0d23ca3a9d.svg",
     "index.html": "/bikes-app/index.html",
-    "main.b4efe8f9.css.map": "/bikes-app/static/css/main.b4efe8f9.css.map",
+    "main.79c8c138.css.map": "/bikes-app/static/css/main.79c8c138.css.map",
     "main.a9f13c12.js.map": "/bikes-app/static/js/main.a9f13c12.js.map",
     "787.30b5b7de.chunk.js.map": "/bikes-app/static/js/787.30b5b7de.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b4efe8f9.css",
+    "static/css/main.79c8c138.css",
     "static/js/main.a9f13c12.js"
   ]
 }
