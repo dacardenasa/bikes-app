@@ -1,0 +1,22 @@
+.paginatorButton,
+.paginatorButton--active {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  background-color: var(--aqua-blue);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+}
+.paginatorButton--active {
+  background-color: var(--white);
+  color: var(--aqua-blue);
+  border: 1px solid var(--aqua-blue);
+}
