@@ -7,6 +7,13 @@
 }
 .searchForm__descriptionBox {
   width: 35%;
+  position: relative;
+}
+.searchForm__descriptionBox svg {
+  position: absolute;
+  right: 30px;
+  top: 8px;
+  cursor: pointer;
 }
 .searchForm__descriptionField {
   width: 90%;
