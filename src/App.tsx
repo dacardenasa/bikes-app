@@ -1,6 +1,7 @@
 import { useEffect, useState, createContext } from 'react';
-import { IRootBike, IContextProps, IBike } from '@/interfaces/bikes.interface';
+import { IRootBike, IContextProps } from '@/interfaces/bikes.interface';
 import { Layout, SearchForm, BikesCases } from '@/components';
+import { LOCATION_LIST } from '@/constants/config';
 import { fetchAPI } from '@/services/api.search.service';
 
 import './App.css';
@@ -12,10 +13,12 @@ function App() {
   const [bikesData, setBikesData] = useState<IRootBike[]>([]);
   const [isFetchingData, setIsFetchingData] = useState<boolean>(false);
   const [errorRequest, setErrorRequest] = useState<string | null>(null);
+  const [isFetchingByFilters, setIsFetchingByFilters] =
+    useState<boolean>(false);
 
   useEffect(() => {
     setIsFetchingData((c) => !c);
-    fetchAPI({ location: 'berlin' })
+    fetchAPI({ location: LOCATION_LIST.berlin })
       .then((response) => {
         setErrorRequest(null);
         setIsFetchingData((c) => !c);
@@ -33,10 +36,13 @@ function App() {
         bikesCases: bikesData,
         handleBikesData: (data: IRootBike[]) => setBikesData(data),
         isFetchingData,
-        handleFetchingData: () => setIsFetchingData((c) => !c),
+        handleFetchingData: (isLoading: boolean) =>
+          setIsFetchingData(isLoading),
         cleanErrorState: () => setErrorRequest(null),
         handleErrorRequest: (error: string) => setErrorRequest(error),
         errorRequest,
+        isFetchingByFilters,
+        handleFetchingFilters: () => setIsFetchingByFilters((c) => !c),
       }}
     >
       <div className="App">
